@@ -1,0 +1,21 @@
+  {% for lesson in course.lesson_set.all %}
+  <div class="card">
+                                                <div class="card-header" id="headingOne">
+                                                    <a href="#" data-toggle="collapse" data-target="#{{lesson.id}}" aria-expanded="true" aria-controls="collapseOne">
+                                                        <ul>
+                                                            <li><i class="fa fa-file-o"></i></li>
+                                                            <li><span class="lecture">Lecture 1.1</span></li>
+                                                            <li><span class="head">{{lesson.name}}</span></li>
+                                                            <li><span class="time d-none d-md-block"><i class="fa fa-clock-o"></i> <span> 00.30.00</span></span></li>
+                                                        </ul>
+                                                    </a>
+                                                </div>
+                                                {% for video in lesson.video_set.all %}
+                                                <div id="{{video.lesson.id}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                                    <div class="card-body">
+                                                        <p>{{video.name}}</p>
+                                                    </div>
+                                                </div>
+                                                {% endfor %}
+                                            </div>
+  {% endfor %}
