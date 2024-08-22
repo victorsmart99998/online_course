@@ -3,7 +3,7 @@
 <html>
   <head>
      <meta charset="utf-8">
-    <title>ECOURSES - Online Courses HTML Template</title>
+    <title>EDUFY</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -15,6 +15,10 @@
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Fancy box -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -48,7 +52,10 @@
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="index2.html" class="logo mt-2"><h2 class="m-0"><span class="text-primary">E</span>COURSES</h2></a>
+        <a href="index2.html" class="logo mt-2"><h2 class="m-0"><span class="text-primary">E</span>DUFY</h2></a>
+          <div class="nav-mobile">
+              <h3 class="">Python: User interface of python</h3>
+          </div>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbarr navbar-static-top" role="navigation">
           <!-- Sidebar toggle button-->
@@ -63,7 +70,7 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav px-5">
                             <div class="nav-item dropdown">
-                                <h3 class="">Python: User interface of python</h3>
+                                <h3 class="">{{video.name}}</h3>
                             </div>
                         </div>
                          <a class="btn btn-primary py-2 px-10 mx-5 d-none d-lg-block margin" href="">Back to Course</a>
@@ -90,27 +97,13 @@
                  </div>
                  {% for video in lesson.video_set.all %}
                  <div id="collapse{{video.lesson.id}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                     {% if check_enroll is None %}
                      <div class="">
-                         <a href="{% url 'course_app:watch_course' course.id %}">
+                         <a href="?lecture={{video.id}}">
                           <ul>
-                             <li><span class="">{{video.name}}<span class="video">10min</span><span class="">0</span></span> </li>
+                             <li><span class="">{{video.name}}</span> </li>
                          </ul>
                          </a>
                      </div>
-                     {% else %}
-                     {% if video.preview == True %}
-                     <div class="">
-                         <a href="#">
-                             <p>{{video.name}}</p>
-                         </a>
-                     </div>
-                     {% else %}
-                     <div class="">
-                         <p>{{video.name}}</p>
-                     </div>
-                     {% endif %}
-                     {% endif %}
                  </div>
                  {% endfor %}
              </div>
@@ -126,8 +119,11 @@
         <!-- Main content -->
         <section class="content">
           <!-- Small boxes (Stat box) -->
-          <div class="row">
-            <img class="img-fluidd rounded w-100 ml-5" src="{% static 'img/carousel-1.jpg' %}" alt="Image">
+          <div class="row svg">
+              <a href="https://youtu.be/NWBL9nJH1HU?si=RFqa59cI1Y3kV-9U" class="" data-fancybox data-caption="Single video">
+                  <img class="svg-element" src="{% static 'img/owl.video.play.png' %}" alt="play-icon">
+                  <img class="img-fluidd rounded w-100 ml-5" src="{{video.imageURL}}" alt="Image">
+            </a>
           </div><!-- /.row -->
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
@@ -137,6 +133,8 @@
    <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
+    <!-- Fancy box -->
+   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -160,5 +158,6 @@
 
     <!-- Template Javascript -->
     <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/function.js' %}"></script>
   </body>
 </html>

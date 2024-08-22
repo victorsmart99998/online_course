@@ -3,11 +3,11 @@
 {% block content %}
 
 <div class='form-group'>
-    <form action="" method='POST' >
+    <form class='form2' action="" method='POST' >
         {% csrf_token %}
-        <div class='form-group'>
+        <div class='form-groupp'>
             {{ form.as_p }}
-            <button type='submit' class='btn btn-primary'>Register</button>
+            <button type='submit' class='btn btn-primary' style="width: 100%;">Register</button>
         </div>
     </form>
 </div>

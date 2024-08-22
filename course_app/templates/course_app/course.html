@@ -32,7 +32,7 @@
                         <img class="img-fluid" src="{{category.imageURL}}" alt="">
                         <a class="cat-overlay text-white text-decoration-none" href="{% url 'course_app:category_detail' category.id %}">
                             <h4 class="text-white font-weight-medium">{{category.name}}</h4>
-                            <span>100 Courses</span>
+                            <span>{{category.course_set.all.count}} Courses</span>
                         </a>
                     </div>
                 </div>
@@ -54,16 +54,17 @@
                 {% for course in courses %}
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="rounded overflow-hidden mb-2">
+                       <a class="h5" href="{% url 'course_app:course_detail' course.id %}">
                         <img class="img-fluid" src="{{course.imageURL}}" alt="">
                         <div class="bg-secondary p-4">
                             <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
-                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>01h 30m</small>
+                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>{{course.user_course_set.all.count}} Students</small>
+                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>{% if course.get_time_duration.sum == None %}0m{% else %}{{course.get_time_duration.sum}}m{% endif %}</small>
                             </div>
                             <a class="h5" href="{% url 'course_app:course_detail' course.id %}">{{course.name}}</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>({{course.productreview_set.all.count}})</small></h6>
                                     {% if course.price == 0 %}
                                     <h5 class="m-0">FREE</h5>
                                     {% else %}
@@ -72,6 +73,7 @@
                                 </div>
                             </div>
                         </div>
+                       </a>
                     </div>
                 </div>
                 {% endfor %}

@@ -627,7 +627,7 @@ pre code {
 
 @media (min-width: 1200px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
-    max-width: 1140px;
+    max-width: 1200px;
   }
 }
 
@@ -9972,3 +9972,50 @@ h6,
 	color: #343a40 !important;
 }
 
+.svg {
+    position: relative;
+    width: fit-content; /* Adjust as needed */
+    height: fit-content; /* Adjust as needed */
+}
+
+.svg-element {
+    position: absolute;
+    top: 51%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+}
+
+.nav-mobile {
+        display: none;
+    }
+
+@media (max-width: 767px) {
+    .nav-mobile {
+        display: block;
+        margin-left: 1rem !important;
+    }
+}
+
+.form2{
+	max-width: 600px;
+	margin: 0 auto;
+	border: 1px solid var(--borderColor);
+	padding: 15px;
+	border-radius: 5px;
+	margin-bottom: 50px;
+	margin-top: 40px;
+}
+
+
+.form2 input[type=text], .form2 input[type=email], .form2 input[type=password]{
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom:10px;
+	border-radius: 5px;
+	border:1px solid var(--borderColor);
+	font-size: 14px;
+}
+
+.form2 .form-groupp ul, .form2 .form-groupp p .helptext{
+        display: none;
+    }

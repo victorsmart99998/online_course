@@ -17,7 +17,7 @@
                         <div class="p-5" style="width: 100%; max-width: 900px;">
                             <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
                             <h1 class="display-3 text-white mb-md-4">Best Education From Your Home</h1>
-                            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                            <a href="{% url 'course_app:about' %}" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                         <div class="p-5" style="width: 100%; max-width: 900px;">
                             <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
                             <h1 class="display-3 text-white mb-md-4">Best Online Learning Platform</h1>
-                            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                            <a href="{% url 'course_app:about' %}" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                         <div class="p-5" style="width: 100%; max-width: 900px;">
                             <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
                             <h1 class="display-3 text-white mb-md-4">New Way To Learn From Home</h1>
-                            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                            <a href="{% url 'course_app:about' %}" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -58,8 +58,8 @@
                         <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">About Us</h5>
                         <h1>Innovative Way To Learn</h1>
                     </div>
-                    <p>Aliquyam accusam clita nonumy ipsum sit sea clita ipsum clita, ipsum dolores amet voluptua duo dolores et sit ipsum rebum, sadipscing et erat eirmod diam kasd labore clita est. Diam sanctus gubergren sit rebum clita amet, sea est sea vero sed et. Sadipscing labore tempor at sit dolor clita consetetur diam. Diam ut diam tempor no et, lorem dolore invidunt no nonumy stet ea labore, dolor justo et sit gubergren diam sed sed no ipsum. Sit tempor ut nonumy elitr dolores justo aliquyam ipsum stet</p>
-                    <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                    <p>Welcome to Edufy, your gateway to a world of knowledge and skill enhancement. At Edufy, we believe that learning should be accessible, engaging, and transformative. Our mission is to empower individuals across the globe by providing high-quality online courses that cater to diverse interests and career goals.</p>
+                    <a href="{% url 'course_app:about' %}" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
                 </div>
             </div>
         </div>
@@ -67,7 +67,7 @@
     <!-- About End -->
 
     <!-- Category Start -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5" id="category">
         <div class="container pt-5 pb-3">
             <div class="text-center mb-5">
                 <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Subjects</h5>
@@ -78,9 +78,9 @@
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="cat-item position-relative overflow-hidden rounded mb-2">
                         <img class="img-fluid" src="{{category.imageURL}}" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
+                        <a class="cat-overlay text-white text-decoration-none" href="{% url 'course_app:category_detail' category.id %}">
                             <h4 class="text-white font-weight-medium">{{category.name}}</h4>
-                            <span>100 Courses</span>
+                            <span>{{category.course_set.all.count}} Courses</span>
                         </a>
                     </div>
                 </div>
@@ -99,18 +99,20 @@
             </div>
             <div class="row">
                 {% for course in courses %}
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="rounded overflow-hidden mb-2">
+                      <a href="{% url 'course_app:course_detail' course.id %}">
                         <img class="img-fluid" src="{{course.imageURL}}" alt="">
                         <div class="bg-secondary p-4">
                             <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
-                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>01h 30m</small>
+                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>{{course.user_course_set.all.count}} Students</small>
+                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>{% if course.get_time_duration.sum == None %}0m{% else %}{{course.get_time_duration.sum}}m{% endif %}</small>
                             </div>
                             <a class="h5" href="{% url 'course_app:course_detail' course.id %}">{{course.name}}</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>({{course.productreview_set.all.count}})</small></h6>
                                     {% if course.price == 0 %}
                                     <h5 class="m-0">FREE</h5>
                                     {% else %}
@@ -119,6 +121,7 @@
                                 </div>
                             </div>
                         </div>
+                      </a>
                     </div>
                 </div>
                 {% endfor %}

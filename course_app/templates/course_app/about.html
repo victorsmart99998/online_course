@@ -1,0 +1,114 @@
+{% extends 'course_app/main.html' %}
+{% load static %}
+{% block content %}
+
+ <!-- Header Start -->
+    <div class="container-fluid page-header" style="margin-bottom: 90px;">
+        <div class="container">
+            <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+                <h3 class="display-4 text-white text-uppercase">About</h3>
+                <div class="d-inline-flex text-white">
+                    <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                    <p class="m-0 text-uppercase">About</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">About Us</h5>
+                <h1>Innovative Way To Learn</h1>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-5 mt-5" >
+                    <img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'img/about.jpg' %}" alt="">
+                </div>
+                <div class="col-lg-7" >
+                    <p>Welcome to LearnEase, your gateway to a world of knowledge and skill enhancement. At LearnEase, we believe that learning should be accessible, engaging, and transformative. Our mission is to empower individuals across the globe by providing high-quality online courses that cater to diverse interests and career goals.</p>
+                    <h4>What We Offer</h4>
+                    <p>Our platform hosts a vast library of courses spanning multiple disciplines, from technology and business to arts and personal development. Whether you're a beginner looking to explore a new hobby, a professional seeking to upskill, or an academic aiming to deepen your knowledge, LearnEase has something for everyone.</p>
+                    <h4>Join Us</h4>
+                    <p>Start your learning adventure with LearnEase today. Whether you're aiming to advance your career, explore new passions, or simply expand your horizons, we're here to help you achieve your goals. Together, let's make learning an exciting and lifelong endeavor.</p>
+                    <a href="{% url 'userauths:sign_up' %}" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Registration Start -->
+    <div class="container-fluid bg-registration py-5" style="margin: 90px 0;">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <div class="mb-4">
+                        <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Need Any Courses</h5>
+                        <h1 class="text-white">30% Off For New Students</h1>
+                    </div>
+                    <p class="text-white">Join our online course platform today and unlock a world of knowledge and opportunities. Here's what you get when you sign up:</p>
+                    <ul class="list-inline text-white m-0">
+                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Access to Premium Courses</li>
+                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Expert Instructors</li>
+                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Flexible Learning</li>
+                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Community Support</li>
+                    </ul>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card border-0">
+                        <div class="card-header bg-light text-center p-4">
+                            <h1 class="m-0">Sign Up Now</h1>
+                        </div>
+                        <div class="card-body rounded-bottom bg-primary p-5">
+                            <a href="{% url 'userauths:sign_up' %}" class="btn btn-dark btn-block border-0 py-3">Join Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Registration End -->
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Testimonial</h5>
+                <h1>What Say Our Students</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="owl-carousel testimonial-carousel">
+                        <div class="text-center">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
+                            <img class="img-fluid mx-auto mb-3" src="img/testimonial-1.jpg" alt="">
+                            <h5 class="m-0">Client Name</h5>
+                            <span>Profession</span>
+                        </div>
+                        <div class="text-center">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
+                            <img class="img-fluid mx-auto mb-3" src="img/testimonial-2.jpg" alt="">
+                            <h5 class="m-0">Client Name</h5>
+                            <span>Profession</span>
+                        </div>
+                        <div class="text-center">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
+                            <img class="img-fluid mx-auto mb-3" src="img/testimonial-3.jpg" alt="">
+                            <h5 class="m-0">Client Name</h5>
+                            <span>Profession</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+{% endblock content %}

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>ECOURSES - Online Courses HTML Template</title>
+    <title>EDUFY</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -19,6 +19,7 @@
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -53,36 +54,42 @@
         <div class="row border-top py-2 px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
                 <div class="col-lg-3">
-                <a href="" class="text-decoration-none">
-                    <h1 class="m-0"><span class="text-primary">E</span>COURSES</h1>
+                <a href="{% url 'course_app:index' %}" class="text-decoration-none">
+                    <h1 class="m-0"><span class="text-primary">E</span>DUFY</h1>
                 </a>
                 </div>
             </div>
             <div class="col-lg-9">
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-                    <a href="" class="text-decoration-none d-block d-lg-none">
-                        <h1 class="m-0"><span class="text-primary">E</span>COURSES</h1>
+                    <a href="{% url 'course_app:index' %}" class="text-decoration-none d-block d-lg-none">
+                        <h1 class="m-0"><span class="text-primary">E</span>DUFY</h1>
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav py-0">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
-                            <a href="about.html" class="nav-item nav-link">About</a>
-                            <a href="course.html" class="nav-item nav-link">Courses</a>
+                            <a href="{% url 'course_app:index' %}" class="nav-item nav-link active">Home</a>
+                            <a href="{% url 'course_app:about' %}" class="nav-item nav-link">About</a>
+                            <a href="{% url 'course_app:courses' %}" class="nav-item nav-link">Courses</a>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories</a>
-                                <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="blog.html" class="dropdown-item">Blog List</a>
-                                    <a href="single.html" class="dropdown-item">Blog Detail</a>
-                                </div>
+                                <a href="#category" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories</a>
                             </div>
-                            <a href="teacher.html" class="nav-item nav-link">Contact Us</a>
-                            <a href="contact.html" class="nav-item nav-link">My Courses</a>
+                            <a href="{% url 'course_app:contact_us' %}" class="nav-item nav-link">Contact Us</a>
+                            {% if request.user.is_authenticated %}
+                            <a href="{% url 'course_app:user_course' %}" class="nav-item nav-link">My Courses</a>
+                            {% else %}
+                            <a href="{% url 'userauths:sign_in' %}" class="nav-item nav-link">My Courses</a>
+                            {% endif %}
+
                         </div>
-                        <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="">Join Now</a>
-                    </div>
+                        {% if request.user.is_authenticated %}
+                        <a class="btn btn-primary py-2 px-4 ml-auto mr-2 d-none d-lg-block" href="{% url 'course_app:user_course' %}">My Courses</a>
+
+                        {% else %}
+                        <a class="btn btn-primary py-2 px-4 ml-auto mr-2 d-none d-lg-block" href="{% url 'userauths:sign_up' %}">Join Now</a>
+                        {% endif %}
+                          </div>
                 </nav>
             </div>
         </div>
@@ -113,27 +120,31 @@
                         </div>
                     </div>
                     <div class="col-md-6 mb-5">
-                        <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Our Courses</h5>
+                        <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Our Pages</h5>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Web Design</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Apps Design</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Marketing</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Research</a>
-                            <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>SEO</a>
+                            <a class="text-white mb-2" href="{% url 'course_app:index' %}"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <a class="text-white mb-2" href="{% url 'course_app:about' %}"><i class="fa fa-angle-right mr-2"></i>About</a>
+                            <a class="text-white mb-2" href="{% url 'course_app:courses' %}"><i class="fa fa-angle-right mr-2"></i>Courses</a>
+                            <a class="text-white mb-2" href="#category"><i class="fa fa-angle-right mr-2"></i>Categories</a>
+                            <a class="text-white" href="{% url 'course_app:contact_us' %}"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-5 col-md-12 mb-5">
                 <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Newsletter</h5>
-                <p>Rebum labore lorem dolores kasd est, et ipsum amet et at kasd, ipsum sea tempor magna tempor. Accu kasd sed ea duo ipsum. Dolor duo eirmod sea justo no lorem est diam</p>
-                <div class="w-100">
-                    <div class="input-group">
-                        <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Your Email Address">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary px-4">Sign Up</button>
-                        </div>
-                    </div>
+                <p>Ready to take the next step? Enter your email address below to subscribe to our newsletter and become a part of the Edufy family. Whether you’re just starting out or continuing your education, we’re here to support you every step of the way.</p><div class="w-100">
+                    <h5 class="text-primary mb-4 subscribe-success"></h5>
+                    <form name="" class="email-form" method='POST' action="{% url 'course_app:get_email' %}">
+                        {% csrf_token %}
+                      <div class="input-group">
+                        <input type="email" name="email" required="required" class="form-control border-light" style="padding: 30px;" placeholder="Your Email Address">
+                          <div class="input-group-append">
+                            <button class="btn btn-primary px-4" id="email-button" type="submit">Sign Up</button>
+                         </div>
+                      </div>
+
+                   </form>
                 </div>
             </div>
         </div>
@@ -141,7 +152,7 @@
     <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
         <div class="row">
             <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0 text-white">&copy; <a href="#">Ecourses</a>. All Rights Reserved. Designed by <a href="https://htmlcodex.com">Ebufy</a>
+                <p class="m-0 text-white">&copy; <a href="{% url 'course_app:index' %}">Edufy</a>. All Rights Reserved. Designed by <a href="">Ebufy</a>
                 </p>
             </div>
             <div class="col-lg-6 text-center text-md-right">

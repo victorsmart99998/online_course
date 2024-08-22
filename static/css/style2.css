@@ -1351,6 +1351,14 @@ p {
 .video{
     padding-left: 80px;
 }
+
+.video-duration{
+    border: 0px solid black;
+    border-radius: 5px;
+    padding: 4px;
+    background-color: rgb(59 130 246 / .5);
+}
+
 .video i{
     width: 120px;
     height: 120px;
