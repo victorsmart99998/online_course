@@ -44,7 +44,7 @@ def course_detail(request, pk):
     reviews = ProductReview.objects.filter(course=course).order_by("date_created")
     related_courses = Course.objects.filter(category=course.category).exclude(id=course.id)[:4]
     time_duration = Video.objects.filter(course__id=pk).aggregate(sum=Sum('time_duration'))
-    average_rating = ProductReview.objects.filter(course=course).aggregate(rating=Avg('rating'))
+    #average_rating = ProductReview.objects.filter(course=course).aggregate(rating=Avg('rating'))
     review_form = ProductReviewForm()
     make_review = True
 

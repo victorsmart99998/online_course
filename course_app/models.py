@@ -5,11 +5,11 @@ from userauths.models import User
 # Create your models here.
 
 RATING = (
-    ('1', '⭐☆☆☆☆'),
-    ('2', '⭐⭐☆☆☆'),
-    ('3', '⭐⭐⭐☆☆'),
-    ('4', '⭐⭐⭐⭐☆'),
-    ('5', '⭐⭐⭐⭐⭐'),
+    (1, '⭐☆☆☆☆'),
+    (2, '⭐⭐☆☆☆'),
+    (3, '⭐⭐⭐☆☆'),
+    (4, '⭐⭐⭐⭐☆'),
+    (5, '⭐⭐⭐⭐⭐'),
 )
 
 class Category(models.Model):
@@ -144,7 +144,7 @@ class ProductReview(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True)
     review = models.TextField()
-    rating = models.CharField(max_length=700, choices=RATING, default=1, blank=True, null=True)
+    rating = models.CharField(max_length=10, choices=RATING, default=1, blank=True, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
