@@ -8,9 +8,10 @@
         <div class='form-groupp'>
             {{ form.as_p }}
             <button type='submit' class='btn btn-primary' style="width: 100%;">Register</button>
+             <p class="mt-5">Already Registered? <a href="{% url 'userauths:sign_in' %}">Sign in</a> </p>
         </div>
     </form>
 
-    <p class="">Already Registered? <a href="{% url 'userauths:sign_in' %}">Sign in</a> </p>
+
 </div>
 {% endblock content %}
