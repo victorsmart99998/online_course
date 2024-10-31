@@ -3,7 +3,7 @@
 {% block content %}
 
     <!-- Carousel Start -->
-    <div class="container-fluid p-0 pb-5 mb-5">
+    <div class="container-fluid p-0">
         <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
@@ -15,9 +15,9 @@
                     <img class="position-relative w-100" src="{% static 'img/carousel-1.jpg' %}" style="min-height: 300px; object-fit: cover;">
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
                         <div class="p-5" style="width: 100%; max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
-                            <h1 class="display-3 text-white mb-md-4">Best Education From Your Home</h1>
-                            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                            <h5 class="text-white text-uppercase mb-md-3">Ebufy Digital Service</h5>
+                            <h1 class="display-3 text-white mb-md-4">Grow Your Business, Make Sales</h1>
+                            <a href="{% url 'course_app:about' %}" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -25,9 +25,9 @@
                     <img class="position-relative w-100" src="{% static 'img/carousel-2.jpg' %}" style="min-height: 300px; object-fit: cover;">
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
                         <div class="p-5" style="width: 100%; max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
-                            <h1 class="display-3 text-white mb-md-4">Best Online Learning Platform</h1>
-                            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                            <h5 class="text-white text-uppercase mb-md-3">Ebufy Digital Service</h5>
+                            <h1 class="display-3 text-white mb-md-4">Attract More Customers, Increase Your Business Visibility Online</h1>
+                            <a href="{% url 'course_app:about' %}" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -35,9 +35,9 @@
                     <img class="position-relative w-100" src="{% static 'img/carousel-3.jpg' %}" style="min-height: 300px; object-fit: cover;">
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
                         <div class="p-5" style="width: 100%; max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
-                            <h1 class="display-3 text-white mb-md-4">New Way To Learn From Home</h1>
-                            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                            <h5 class="text-white text-uppercase mb-md-3">Ebufy Digital Service</h5>
+                            <h1 class="display-3 text-white mb-md-4">Get Top-Rated Expert In Web Design And Development On-Demand</h1>
+                            <a href="{% url 'course_app:about' %}" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -47,116 +47,232 @@
     <!-- Carousel End -->
 
     <!-- About Start -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid" style="background-color: #fff; padding-top: 10rem !important; padding-bottom: 5rem !important;">
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-5">
-                    <img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'img/about.jpg' %}" alt="">
+                    <img data-aos="fade-right"  data-aos-duration="3000" class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'img/profile.jpg' %}" alt="">
                 </div>
                 <div class="col-lg-7">
-                    <div class="text-left mb-4">
+                    <div class="text-left mb-4" data-aos="fade-left" data-aos-duration="2000">
                         <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">About Us</h5>
-                        <h1>Innovative Way To Learn</h1>
+                        <h1>Team Of Experienced IT Professionals</h1>
                     </div>
-                    <p>Aliquyam accusam clita nonumy ipsum sit sea clita ipsum clita, ipsum dolores amet voluptua duo dolores et sit ipsum rebum, sadipscing et erat eirmod diam kasd labore clita est. Diam sanctus gubergren sit rebum clita amet, sea est sea vero sed et. Sadipscing labore tempor at sit dolor clita consetetur diam. Diam ut diam tempor no et, lorem dolore invidunt no nonumy stet ea labore, dolor justo et sit gubergren diam sed sed no ipsum. Sit tempor ut nonumy elitr dolores justo aliquyam ipsum stet</p>
-                    <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                    <p>At Ebufy, we believe in the power of technology to revolutionize businesses. Our team consists of talented developers, creative designers, and strategic thinkers who work collaboratively to deliver top-notch web solutions. With years of experience in the industry, we have honed our skills to provide cutting-edge services that cater to a diverse range of industries and business needs.</p>
+                    <a href="{% url 'course_app:about' %}" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
                 </div>
             </div>
         </div>
     </div>
     <!-- About End -->
 
-    <!-- Category Start -->
-    <div class="container-fluid py-5">
+    <!-- Why us Start -->
+    <div class="container-fluid py-5" id="category" data-aos="fade-up" data-aos-duration="3000">
         <div class="container pt-5 pb-3">
             <div class="text-center mb-5">
-                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Subjects</h5>
-                <h1>Explore Top Subjects</h1>
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Why Us</h5>
+                <h1>Why Other Businesses Hire Us</h1>
             </div>
             <div class="row">
-                {% for category in categorys %}
-                <div class="col-lg-3 col-md-6 mb-4">
+                <div class="col-lg-4 col-md-6 mb-4">
                     <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="{{category.imageURL}}" alt="">
+                        <img class="img-fluid" src="{% static 'img/cat-3.jpg' %}" alt="">
                         <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">{{category.name}}</h4>
-                            <span>100 Courses</span>
+                            <h4 class="text-white font-weight-medium">Improved Security</h4>
+                            <span class="mx-3">We Develop website secured from hackers and malware, providing your customers with peace of mind when using your website.</span>
                         </a>
                     </div>
                 </div>
-                {% endfor %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" src="{% static 'img/cat-5.jpg' %}" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" href="">
+                            <h4 class="text-white font-weight-medium">Search Engine Optimization</h4>
+                            <span class="mx-3">We ensure that your website is optimized for search engines like Google, making it easier for potential customers to find your website when searching for business</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" src="{% static 'img/cat-8.jpg' %}" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" href="">
+                            <h4 class="text-white font-weight-medium">Faster Website</h4>
+                            <span class="mx-3">We ensure your website loads quickly, improving the user experience and reducing the likelihood of visitors bouncing and improve Google core web vital score</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- Category Start -->
+    <!-- Why us Start -->
 
-    <!-- Courses Start -->
-    <div class="container-fluid py-5">
+    <!-- Our Services Start -->
+    <div class="container-fluid py-5" id="Services" style="background-color: #fff;">
         <div class="container py-5">
             <div class="text-center mb-5">
-                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Courses</h5>
-                <h1>Our Popular Courses</h1>
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Our Services</h5>
+                <h1>Services We Provide</h1>
             </div>
             <div class="row">
-                {% for course in courses %}
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="rounded overflow-hidden mb-2">
-                        <img class="img-fluid" src="{{course.imageURL}}" alt="">
-                        <div class="bg-secondary p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
-                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>01h 30m</small>
-                            </div>
-                            <a class="h5" href="{% url 'course_app:course_detail' course.id %}">{{course.name}}</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    {% if course.price == 0 %}
-                                    <h5 class="m-0">FREE</h5>
-                                    {% else %}
-                                    <h5 class="m-0">${{course.price}}</h5>
-                                    {% endif %}
-                                </div>
-                            </div>
+                <div class="col-lg-4 col-md-6 mb-4 bg-secondary" style="box-shadow: 0 15px 50px -10px rgba(0, 0, 0, .1);">
+                    <div class="rounded overflow-hidden mb-2" style="padding: 1px;">
+                        <div class="text-center">
+                          <img class="img-fluid text-center" src="{% static 'img/icon-2.gif' %}" alt="">
+                        </div>
+                        <div class="bg-secondary text-center">
+                            <a class="h5" href="">WordPress Web Design</a>
+                            <p>Let Us boost your online presence with a professional website made specifically to achieve your business goals</p>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
+                <div class="col-lg-4 col-md-6 mb-4 bg-secondary" style="box-shadow: 0 15px 50px -10px rgba(0, 0, 0, .1);">
+                    <div class="rounded overflow-hidden mb-2" style="padding: 1px;">
+                        <div class="text-center">
+                          <img class="img-fluid text-center" src="{% static 'img/icon-2.gif' %}" alt="">
+                        </div>
+                        <div class="bg-secondary text-center">
+                            <a class="h5" href="">Custom Web Development</a>
+                            <p>Let Us boost your online presence with a professional website made specifically to achieve your business goals</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 bg-secondary" style="box-shadow: 0 15px 50px -10px rgba(0, 0, 0, .1);">
+                    <div class="rounded overflow-hidden mb-2" style="padding: 1px;">
+                        <div class="text-center">
+                          <img class="img-fluid text-center" src="{% static 'img/icon-3.gif' %}" alt="">
+                        </div>
+                        <div class="bg-secondary text-center">
+                            <a class="h5" href="">Web SEO</a>
+                            <p>Dominate search engine rankings, attract targeted traffic, and skyrocket your online visibility with proven strategies with our game-changing Web SEO services</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <!-- Our Services End -->
+
+    <!-- Portfolio Start -->
+    <div class="container-fluid py-5" id="Portfolio" data-aos="fade-up" data-aos-duration="3000">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Portfolio</h5>
+                <h1>Our Previous Work</h1>
+            </div>
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="rounded overflow-hidden mb-2">
+                        <img class="img-fluid" src="{% static 'img/Zemmour.jpg' %}" alt="">
+                        <div class="bg-secondary">
+                            <p class="h5" style="padding-top: 20px;">zemmourgroup</p>
+                            <p>Professional security service</p>
+                            <a href="https://www.zemmourgroup.com/" class="btn btn-secondary py-md-2 px-md-4 font-weight-semi-bold mt-2" style="background-color: #fff;">Visit Site</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="rounded overflow-hidden mb-2">
+                        <img class="img-fluid" src="{% static 'img/houseeoffrancesca.jpg' %}" alt="">
+                        <div class="bg-secondary">
+                            <p class="h5" style="padding-top: 20px;">house of francesca</p>
+                            <p>Online Store</p>
+                            <a href="https://www.houseeoffrancesca.com/" class="btn btn-secondary py-md-2 px-md-4 font-weight-semi-bold mt-2" style="background-color: #fff;">Visit Site</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="rounded overflow-hidden mb-2">
+                        <img class="img-fluid" src="{% static 'img/peoplemastery.jpg' %}" alt="">
+                        <div class="bg-secondary">
+                            <p class="h5" style="padding-top: 20px;">people mastery</p>
+                            <p>HR Consultancy</p>
+                            <a href="https://www.peoplemastery.co.uk/" class="btn btn-secondary py-md-2 px-md-4 font-weight-semi-bold mt-2" style="background-color: #fff;">Visit Site</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="rounded overflow-hidden mb-2">
+                        <img class="img-fluid" src="{% static 'img/sankwins.jpg' %}" alt="">
+                        <div class="bg-secondary">
+                            <p class="h5" style="padding-top: 20px;">sankwins</p>
+                            <p>E-commerce Store</p>
+                            <a href="https://www.sankwins.com/" class="btn btn-secondary py-md-2 px-md-4 font-weight-semi-bold mt-2" style="background-color: #fff;">Visit Site</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="rounded overflow-hidden mb-2">
+                        <img class="img-fluid" src="{% static 'img/unityluxuryapartments.jpg' %}" alt="">
+                        <div class="bg-secondary">
+                            <p class="h5" style="padding-top: 20px;">unity-luxury-apartments</p>
+                            <p>Hotel Booking</p>
+                            <a href="https://www.unityluxuryapartments.com/" class="btn btn-secondary py-md-2 px-md-4 font-weight-semi-bold mt-2" style="background-color: #fff;">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="rounded overflow-hidden mb-2">
+                        <img class="img-fluid" src="{% static 'img/vfriend.jpg' %}" alt="">
+                        <div class="bg-secondary">
+                            <p class="h5" style="padding-top: 20px;">vfriend</p>
+                            <p>Online Friendship Support Service</p>
+                            <a href="https://www.vfriendonline.com/" class="btn btn-secondary py-md-2 px-md-4 font-weight-semi-bold mt-2" style="background-color: #fff;">Visit Site</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-    <!-- Courses End -->
+    <!-- Portfolio End -->
 
     <!-- Testimonial Start -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5" id="Testimonial">
         <div class="container py-5">
             <div class="text-center mb-5">
                 <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Testimonial</h5>
-                <h1>What Say Our Students</h1>
+                <h1>What Say Our Clients</h1>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="owl-carousel testimonial-carousel">
                         <div class="text-center">
                             <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                            <img class="img-fluid mx-auto mb-3" src="{% static 'img/testimonial-1.jpg' %}" alt="">
-                            <h5 class="m-0">Client Name</h5>
-                            <span>Profession</span>
+                            <h4 class="font-weight-normal mb-4">Ebufy is incredible! Delivers high quality work in a very timely manner. I would recommend to anyone and will certainly be back.</h4>
+                            <img class="img-fluid mx-auto mb-3" src="{% static 'img/test-1.webp' %}" alt="">
+                            <h5 class="m-0">Akinbola O</h5>
+                            <span>business Owner</span>
                         </div>
                         <div class="text-center">
                             <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                            <img class="img-fluid mx-auto mb-3" src="{% static 'img/testimonial-2.jpg' %}" alt="">
-                            <h5 class="m-0">Client Name</h5>
-                            <span>Profession</span>
+                            <h4 class="font-weight-normal mb-4">Rarely do you come across developers with Ebufy skillset and communication skills. We were delighted with their work and can't wait to have them do our next project</h4>
+                            <img class="img-fluid mx-auto mb-3" src="{% static 'img/test-2.webp' %}" alt="">
+                            <h5 class="m-0">Samuel A</h5>
+                            <span>School propriator</span>
                         </div>
                         <div class="text-center">
                             <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
+                            <h4 class="font-weight-normal mb-4"> Ebufy is a pleasure to work with! They showed great attention to detail and demonstrated great skill. They are great communicators and effectively communicated status and updates along the way</h4>
+                            <img class="img-fluid mx-auto mb-3" src="{% static 'img/test-4.webp' %}" alt="">
+                            <h5 class="m-0">Ayomiposi A</h5>
+                            <span>Business Consultant</span>
+                        </div>
+                        <div class="text-center">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <h4 class="font-weight-normal mb-4">Ebufy made my life easier by taking this WordPress website off my to-do list. they listened well to the brief, and made my changes and my client's changes fast. the matched all the colors and the type to the brand guide elegantly. This is the 3rd time I have hired them and working with them is a breeze. I recommend her for your Wordpress site</h4>
                             <img class="img-fluid mx-auto mb-3" src="{% static 'img/testimonial-3.jpg' %}" alt="">
-                            <h5 class="m-0">Client Name</h5>
-                            <span>Profession</span>
+
+                            <h5 class="m-0">Dennis A</h5>
+                            <span>Business Owner</span>
+                        </div>
+                        <div class="text-center">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <h4 class="font-weight-normal mb-4">We contracted Ebufy for his expert Wordpress guidance and they assisted us in understanding the platform and common issues. We were very satisfied with the consultation and look forward to have them do our next project.</h4>
+                            <img class="img-fluid mx-auto mb-3" src="{% static 'img/testimonial-1.jpg' %}" alt="">
+
+                            <h5 class="m-0">Ridwan G</h5>
+                            <span>lawyer</span>
                         </div>
                     </div>
                 </div>
@@ -164,6 +280,9 @@
         </div>
     </div>
     <!-- Testimonial End -->
+
+
+
 
 
 {% endblock content %}

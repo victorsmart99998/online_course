@@ -52,6 +52,64 @@ $("#comment-form").submit(function(e){
         })
     })
 
+$(".email-form").submit(function(e){
+    e.preventDefault();
+    console.log("button clicked.....");
 
+      $.ajax({
+          data: $(this).serialize(),
+          method: $(this).attr("method"),
+          url: $(this).attr("action"),
+          dataType: 'json',
 
+          success: function(res){
+            console.log("comment save to DB....");
+           $(".subscribe-success").html("Hello you have successfully sign up ..")
+           $(".email-form").hide()
+
+          }
+     })
+ })
+
+ $(".address-form").submit(function(e){
+    e.preventDefault();
+    console.log("button clicked.....");
+
+      $.ajax({
+          data: $(this).serialize(),
+          method: $(this).attr("method"),
+          url: $(this).attr("action"),
+          dataType: 'json',
+
+          success: function(res){
+            console.log("address save to DB....");
+           $(".address-success").html("Hello you have successfully submitted your shipping address ..")
+           $(".address-form").hide()
+
+          }
+     })
+ })
+
+$("#contactForm").submit(function(e){
+    e.preventDefault();
+    console.log("button clicked.....");
+
+      $.ajax({
+          data: $(this).serialize(),
+          method: $(this).attr("method"),
+          url: $(this).attr("action"),
+          dataType: 'json',
+
+          success: function(res){
+            console.log("message save to DB....");
+           $(".contact-success").html("Hello your message has been received..")
+           $("#contactForm").hide()
+
+          }
+     })
+ })
+
+Fancybox.bind("[data-fancybox]", {
+  // Your custom options
+});
 

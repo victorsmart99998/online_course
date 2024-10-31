@@ -20,6 +20,10 @@ class CourseAdmin(admin.ModelAdmin):
 
 # Register your models here.
 
+admin.site.register(ShippingAddress)
+admin.site.register(Contact)
+admin.site.register(NewsletterSubscribers)
+admin.site.register(Payment)
 admin.site.register(Category)
 admin.site.register(Course, CourseAdmin)
 admin.site.register(Author)

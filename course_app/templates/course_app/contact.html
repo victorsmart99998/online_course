@@ -1,7 +1,22 @@
 {% extends 'course_app/main.html' %}
 {% load static %}
-{% block content %}
 
+{% block navbar %}
+<div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+    <div class="navbar-nav py-0">
+        <a href="{% url 'course_app:index' %}" class="nav-item nav-link active">Home</a>
+        <a href="{% url 'course_app:about' %}" class="nav-item nav-link">About Us</a>
+        <a href="{% url 'course_app:index' %}#Services" class="nav-item nav-link">Our Services</a>
+        <a href="{% url 'course_app:index' %}#Portfolio" class="nav-link dropdown-toggle" data-toggle="dropdown">Portfolio</a>
+        <a href="{% url 'course_app:contact_us' %}" class="nav-item nav-link">Contact Us</a>
+        <a href="{% url 'course_app:index' %}#Testimonial" class="nav-item nav-link">Testimonial</a>
+    </div>
+    <a class="btn btn-primary py-2 px-4 ml-auto mr-2 d-none d-lg-block" href="https://wa.me/2348107876238?text=Hello%20I%20would%20like%20to%20learn%20more%20about%20your%20services">Whatsapp Us</a>
+</div>
+{% endblock %}
+
+
+{% block content %}
 
 
     <!-- Header Start -->
@@ -10,7 +25,7 @@
             <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
                 <h3 class="display-4 text-white text-uppercase">Contact</h3>
                 <div class="d-inline-flex text-white">
-                    <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                    <p class="m-0 text-uppercase"><a class="text-white" href="{% url 'course_app:index' %}">Home</a></p>
                     <i class="fa fa-angle-double-right pt-1 px-3"></i>
                     <p class="m-0 text-uppercase">Contact</p>
                 </div>
@@ -25,31 +40,33 @@
         <div class="container py-5">
             <div class="text-center mb-5">
                 <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Contact</h5>
-                <h1>Contact For Any Query</h1>
+                <h1>Get a Free Quote Now</h1>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="contact-form bg-secondary rounded p-5">
                         <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <h5 class="text-primary mb-4 contact-success"></h5>
+                        <form name="sentMessage" id="contactForm" method='POST' action="{% url 'course_app:get_contact' %}">
+                            {% csrf_token %}
                             <div class="control-group">
-                                <input type="text" class="form-control border-0 p-4" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+                                <input type="text" name="name" class="form-control border-0 p-4" id="name" placeholder="Your Name" required="required" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <input type="email" class="form-control border-0 p-4" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                <input type="email" name="email" class="form-control border-0 p-4" id="email" placeholder="Your Email" required="required" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <input type="text" class="form-control border-0 p-4" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                                <input type="text" name="subject" class="form-control border-0 p-4" id="subject" placeholder="Whatsapp Number" required="required" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <textarea class="form-control border-0 py-3 px-4" rows="5" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                <textarea class="form-control border-0 py-3 px-4" name="message" rows="5" id="message" placeholder="Project Details" required="required" ></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="text-center">
-                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Send Message</button>
+                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Get Pricing Now </button>
                             </div>
                         </form>
                     </div>

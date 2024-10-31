@@ -1,0 +1,147 @@
+{% extends 'course_app/main.html' %}
+{% load static %}
+
+{% block navbar %}
+<div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+    <div class="navbar-nav py-0">
+        <a href="{% url 'course_app:index' %}" class="nav-item nav-link active">Home</a>
+        <a href="{% url 'course_app:about' %}" class="nav-item nav-link">About Us</a>
+        <a href="{% url 'course_app:index' %}#Services" class="nav-item nav-link">Our Services</a>
+        <a href="{% url 'course_app:index' %}#Portfolio" class="nav-link dropdown-toggle" data-toggle="dropdown">Portfolio</a>
+        <a href="{% url 'course_app:contact_us' %}" class="nav-item nav-link">Contact Us</a>
+        <a href="{% url 'course_app:index' %}#Testimonial" class="nav-item nav-link">Testimonial</a>
+    </div>
+    <a class="btn btn-primary py-2 px-4 ml-auto mr-2 d-none d-lg-block" href="https://wa.me/2348107876238?text=Hello%20I%20would%20like%20to%20learn%20more%20about%20your%20services">Whatsapp Us</a>
+</div>
+{% endblock %}
+
+
+{% block content %}
+
+ <!-- Header Start -->
+    <div class="container-fluid page-header" style="margin-bottom: 90px;">
+        <div class="container">
+            <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+                <h3 class="display-4 text-white text-uppercase">About</h3>
+                <div class="d-inline-flex text-white">
+                    <p class="m-0 text-uppercase"><a class="text-white" href="{% url 'course_app:index' %}">Home</a></p>
+                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                    <p class="m-0 text-uppercase">About</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">About Us</h5>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-5 mt-5" >
+                    <img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'img/profile.jpg' %}" alt="">
+                </div>
+                <div class="col-lg-7" >
+                    <h1>Team Of Experienced IT Professionals</h1>
+                    <p>At Ebufy, we believe in the power of technology to revolutionize businesses. Our team consists of talented developers, creative designers, and strategic thinkers who work collaboratively to deliver top-notch web solutions. With years of experience in the industry, we have honed our skills to provide cutting-edge services that cater to a diverse range of industries and business needs.</p>
+                    <p>Our mission is simple: to empower businesses by crafting custom websites that not only look stunning but also perform exceptionally. We believe that every business, regardless of size, deserves a powerful online presence. Through cutting-edge technology and creative design, we help our clients stand out in a crowded digital landscape</p>
+
+                    <a href="{% url 'course_app:contact_us' %}" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Get a Quote</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Registration Start -->
+    <div class="container-fluid bg-registration py-5" style="margin: 90px 0;">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <div class="mb-4">
+                        <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Need Any Website?</h5>
+                        <h1 class="text-white">20% Off For New Customers</h1>
+                    </div>
+                    <p class="text-white">Ready to take your online presence to the next level? Contact Us and start your journey towards a powerful, engaging, and effective website. Whether you’re looking to launch a new site, revamp your existing one, or need ongoing support, we’re here to help you achieve your goals. Here's what you get when you Contact Us:</p>
+                    <ul class="list-inline text-white m-0">
+                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Custom Solutions</li>
+                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Expert Team</li>
+                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Seamless Process</li>
+                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Ongoing Support</li>
+                    </ul>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card border-0">
+                        <div class="card-header bg-light text-center p-4">
+                            <h1 class="m-0">Contact Us Now</h1>
+                        </div>
+                        <div class="card-body rounded-bottom bg-primary p-5">
+                            <a href="{% url 'course_app:contact_us' %}" class="btn btn-dark btn-block border-0 py-3">Get a Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Registration End -->
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid py-5" id="Testimonial">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Testimonial</h5>
+                <h1>What Say Our Clients</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="owl-carousel testimonial-carousel">
+                        <div class="text-center">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <h4 class="font-weight-normal mb-4">Ebufy is incredible! Delivers high quality work in a very timely manner. I would recommend to anyone and will certainly be back.</h4>
+                            <img class="img-fluid mx-auto mb-3" src="{% static 'img/test-1.webp' %}" alt="">
+                            <h5 class="m-0">Akinbola O</h5>
+                            <span>business Owner</span>
+                        </div>
+                        <div class="text-center">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <h4 class="font-weight-normal mb-4">Rarely do you come across developers with Ebufy skillset and communication skills. We were delighted with their work and can't wait to have them do our next project</h4>
+                            <img class="img-fluid mx-auto mb-3" src="{% static 'img/test-2.webp' %}" alt="">
+                            <h5 class="m-0">Samuel A</h5>
+                            <span>School propriator</span>
+                        </div>
+                        <div class="text-center">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <h4 class="font-weight-normal mb-4"> Ebufy is a pleasure to work with! They showed great attention to detail and demonstrated great skill. They are great communicators and effectively communicated status and updates along the way</h4>
+                            <img class="img-fluid mx-auto mb-3" src="{% static 'img/test-4.webp' %}" alt="">
+                            <h5 class="m-0">Ayomiposi A</h5>
+                            <span>Business Consultant</span>
+                        </div>
+                        <div class="text-center">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <h4 class="font-weight-normal mb-4">Ebufy made my life easier by taking this WordPress website off my to-do list. they listened well to the brief, and made my changes and my client's changes fast. the matched all the colors and the type to the brand guide elegantly. This is the 3rd time I have hired them and working with them is a breeze. I recommend her for your Wordpress site</h4>
+                            <img class="img-fluid mx-auto mb-3" src="{% static 'img/testimonial-3.jpg' %}" alt="">
+
+                            <h5 class="m-0">Dennis A</h5>
+                            <span>Business Owner</span>
+                        </div>
+                        <div class="text-center">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <h4 class="font-weight-normal mb-4">We contracted Ebufy for his expert Wordpress guidance and they assisted us in understanding the platform and common issues. We were very satisfied with the consultation and look forward to have them do our next project.</h4>
+                            <img class="img-fluid mx-auto mb-3" src="{% static 'img/testimonial-1.jpg' %}" alt="">
+
+                            <h5 class="m-0">Ridwan G</h5>
+                            <span>lawyer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+
+{% endblock content %}
+

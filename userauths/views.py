@@ -36,6 +36,7 @@ def login_view(request):
             user = User.objects.get(email=email)
         except:
             messages.warning(request, f"User with {email} does not exist")
+
         user = authenticate(request, email=email, password=password)
 
         if user is not None:
@@ -46,6 +47,7 @@ def login_view(request):
             messages.warning(request, "user does not exist, create an account")
     context = {}
     return render(request, 'userauths/sign_in.html', context)
+
 
 def logout_view(request):
     logout(request)

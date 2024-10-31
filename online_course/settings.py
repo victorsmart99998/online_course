@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'online_course.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'postgres.utjqgdsowquidlcaschk',
+        'PASSWORD': '2zv.s4GH#ypDs#S',
+        'HOST': 'aws-0-eu-central-1.pooler.supabase.com',
+        'PORT': '6543',
     }
 }
 
@@ -134,3 +138,11 @@ AUTH_USER_MODEL = 'userauths.User'
 
 PAYPAL_RECEIVER_EMAIL = 'victchubxy@gmail.com'
 PAYPAL_TEST = True
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 465  # Use port 465 if you prefer SSL
+EMAIL_USE_TLS = False # Set to False if using SSL
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'victchubxy@gmail.com'  # Replace with your Gmail address
+EMAIL_HOST_PASSWORD = 'zyzcktsazjujdqsu'
